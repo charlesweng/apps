@@ -1,8 +1,8 @@
-import 'package:bmi_calculator/bmi.dart';
-import 'package:bmi_calculator/bmi_args.dart';
 import 'package:bmi_calculator/constants.dart';
-import 'package:bmi_calculator/main.dart';
-import 'package:bmi_calculator/reusable_card.dart';
+import 'package:bmi_calculator/models/bmi.dart';
+import 'package:bmi_calculator/models/bmi_args.dart';
+import 'package:bmi_calculator/widgets/bottom_button.dart';
+import 'package:bmi_calculator/widgets/reusable_card.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
@@ -184,35 +184,15 @@ class _InputPageState extends State<InputPage> {
               ))
             ],
           )),
-          GestureDetector(
-            onTap: () {
-              BMI calculator = BMI(weight: weight, height: height);
-              calculator.calculate();
-              Navigator.pushNamed(context, '/results',
-                  arguments: BMIArguments(
-                      bmi: calculator.getBmi,
-                      status: calculator.getStatus(),
-                      action: calculator.getAction()));
-            },
-            child: Container(
-              child: Center(
-                child: Text(
-                  "CALCULATE",
-                  style: TextStyle(
-                      color: Colors.white,
-                      fontWeight: FontWeight.bold,
-                      fontSize: 20.0),
-                ),
-              ),
-              color: PINK_BUTTON_COLOR,
-              margin: EdgeInsets.only(
-                top: 10.0,
-              ),
-              padding: EdgeInsets.only(bottom: 20.0),
-              width: double.infinity,
-              height: BOTTOM_CONTAINER_HEIGHT,
-            ),
-          )
+          BottomButton(text: "CALCULATE", onTap: () {
+            BMI calculator = BMI(weight: weight, height: height);
+            calculator.calculate();
+            Navigator.pushNamed(context, "/results",
+                arguments: BMIArguments(
+                    bmi: calculator.getBmi,
+                    status: calculator.getStatus(),
+                    action: calculator.getAction()));
+          },)
         ],
       ),
     );

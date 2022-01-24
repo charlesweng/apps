@@ -1,6 +1,7 @@
-import 'package:bmi_calculator/bmi_args.dart';
 import 'package:bmi_calculator/constants.dart';
-import 'package:bmi_calculator/reusable_card.dart';
+import 'package:bmi_calculator/models/bmi_args.dart';
+import 'package:bmi_calculator/widgets/bottom_button.dart';
+import 'package:bmi_calculator/widgets/reusable_card.dart';
 import 'package:flutter/material.dart';
 
 class ResultsPage extends StatelessWidget {
@@ -13,19 +14,23 @@ class ResultsPage extends StatelessWidget {
         title: Text("BMI CALCULATOR"),
       ),
       body: Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
-          Container(
-            child: Text(
-              "Your Result",
-              style: HUGE_LABEL_TEXT_STYLE,
+          Expanded(
+            child: Container(
+              child: Text(
+                "Your Result",
+                style: HUGE_LABEL_TEXT_STYLE,
+              ),
             ),
           ),
           SizedBox(
             height: 20.0,
           ),
           Expanded(
-              child: ReusableCard(
+            flex: 5,
+            child: ReusableCard(
             color: DEFAULT_REUSABLE_CARD_COLOR,
             cardChild: Column(
               children: [
@@ -34,7 +39,8 @@ class ResultsPage extends StatelessWidget {
                   textAlign: TextAlign.center,
                   style: TextStyle(
                     color: Color.fromRGBO(40, 191, 156, 100.0),
-                    fontWeight: FontWeight.bold,
+                    fontWeight: FontWeight.w900,
+                    fontSize: 25.0
                   ),
                 ),
                 Text(args?.bmi?.toString() ?? "NULL",
@@ -45,35 +51,15 @@ class ResultsPage extends StatelessWidget {
                 ),
               ],
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              crossAxisAlignment: CrossAxisAlignment.stretch,
+              crossAxisAlignment: CrossAxisAlignment.center,
             ),
           )),
           SizedBox(
             height: 8.0,
           ),
-          GestureDetector(
-            onTap: () {
+          BottomButton(text: "RE-CALCULATE", onTap: () {
               Navigator.pushNamed(context, '/');
-            },
-            child: Container(
-              child: Center(
-                child: Text(
-                  "RE-CALCULATE",
-                  style: TextStyle(
-                      color: Colors.white,
-                      fontWeight: FontWeight.bold,
-                      fontSize: 20.0),
-                ),
-              ),
-              color: PINK_BUTTON_COLOR,
-              margin: EdgeInsets.only(
-                top: 10.0,
-              ),
-              padding: EdgeInsets.only(bottom: 20.0),
-              width: double.infinity,
-              height: BOTTOM_CONTAINER_HEIGHT,
-            ),
-          )
+            },)
         ],
       ),
     );

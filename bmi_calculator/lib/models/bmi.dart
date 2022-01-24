@@ -22,6 +22,8 @@ class BMI {
       return "Overweight";
     } else if (_bmi > 29.9) {
       return "Obese";
+    } else {
+      return "Unknown";
     }
   }
 
@@ -34,6 +36,8 @@ class BMI {
       return "Exercise more.";
     } else if (_bmi > 29.9) {
       return "See a nutritionist.";
+    } else {
+      return "Unknown";
     }
   }
 }
