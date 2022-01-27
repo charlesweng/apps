@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "621735716048",
+    "project_id": "maiflashchat",
+    "storage_bucket": "maiflashchat.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:621735716048:android:57e1821df62f62037cead5",
+        "android_client_info": {
+          "package_name": "com.maiflashchat"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "621735716048-clc3ilntra66qjsfh4tuoishv71obebu.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAZsX52jf18g3uMDTL8_6yPVgNtIYOvgOg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "621735716048-clc3ilntra66qjsfh4tuoishv71obebu.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "621735716048-auptvcgkogpdn2saf2m8dsb127nu8q6j.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.maiflashchat"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
